@@ -102,7 +102,11 @@ function newspack_custom_typography_css() {
 		.widget_tag_cloud .tagcloud,
 
 		/* _copy.scss */
-		blockquote cite
+		blockquote cite,
+
+		/* Jetpack */
+		.entry-content #jp-relatedposts h3.jp-relatedposts-headline,
+		.entry-content #jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post .jp-relatedposts-post-title a
 
 		{
 			font-family: $font_header;
@@ -278,7 +282,8 @@ function newspack_custom_typography_css() {
 	if ( true === get_theme_mod( 'accent_allcaps', true ) ) {
 		$css_blocks .= '
 			.tags-links span:first-child,
-			.page-title {
+			.page-title,
+			.entry-content #jp-relatedposts h3.jp-relatedposts-headline {
 				text-transform: uppercase;
 			}
 		';
