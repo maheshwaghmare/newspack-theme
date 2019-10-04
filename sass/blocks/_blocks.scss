@@ -14,7 +14,7 @@
 	&.alignleft {
 		/*rtl:ignore*/
 		float: left;
-		margin-top: 0;
+		margin-top: #{ 0.5 * $size__spacing-unit };
 		margin-left: 0;
 		margin-right: 0;
 		/*rtl:ignore*/
@@ -26,7 +26,7 @@
 	&.alignright {
 		/*rtl:ignore*/
 		float: right;
-		margin-top: 0;
+		margin-top: #{ 0.5 * $size__spacing-unit };
 		margin-left: 0;
 		margin-right: 0;
 		/*rtl:ignore*/
@@ -41,6 +41,18 @@
 		@include media(tablet) {
 			margin-left: 0;
 			margin-right: 0;
+		}
+	}
+
+	@include media( tablet ) {
+		&.wp-block-group.is-style-alignleft {
+			margin-top: #{ 0.5 * $size__spacing-unit };
+			margin-right: $size__spacing-unit;
+		}
+
+		&.wp-block-group.is-style-alignright {
+			margin-top: #{ 0.5 * $size__spacing-unit };
+			margin-left: $size__spacing-unit;
 		}
 	}
 }
@@ -711,7 +723,11 @@
 	//! Columns
 	.wp-block-columns {
 
-		.wp-block-column > *:last-child {
+		.wp-block-column > * :first-child {
+			margin-top: 0;
+		}
+
+		.wp-block-column > * :last-child {
 			margin-bottom: 0;
 		}
 
@@ -757,6 +773,9 @@
 
 	//! Group
 	.wp-block-group {
+		.wp-block-group__inner-container > *:first-child {
+			margin-top: 0;
+		}
 		.wp-block-group__inner-container > *:last-child {
 			margin-bottom: 0;
 		}
@@ -945,7 +964,8 @@
 		}
 
 		&.alignleft,
-		&.wp-block-image .alignleft {
+		&.wp-block-image .alignleft,
+		&.wp-block-group.is-style-alignleft {
 			@include media(mobile) {
 				/*rtl:ignore*/
 				margin-right: calc(2 * #{$size__spacing-unit});
@@ -963,7 +983,8 @@
 		}
 
 		&.alignright,
-		&.wp-block-image .alignright {
+		&.wp-block-image .alignright,
+		&.wp-block-group.is-style-alignright {
 			@include media(mobile) {
 				/*rtl:ignore*/
 				margin-left: calc(2 * #{$size__spacing-unit});
@@ -1055,6 +1076,24 @@
 		&.alignfull {
 			padding-left: $size__spacing-unit;
 			padding-right: $size__spacing-unit;
+		}
+	}
+}
+
+.post-template-default.singular.no-sidebar {
+	.entry .entry-content > * {
+		&.alignright,
+		&.wp-block-image .alignright,
+		&.wp-block-group.is-style-alignright {
+			@include media(mobile) {
+				/*rtl:ignore*/
+				margin-left: calc(2 * #{$size__spacing-unit});
+			}
+
+			@include media( tablet ) {
+				/*rtl:ignore*/
+				margin-right: calc( -50% - #{ 1.5 * $size__spacing-unit } );
+			}
 		}
 	}
 }
