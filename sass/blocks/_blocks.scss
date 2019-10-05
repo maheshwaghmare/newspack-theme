@@ -945,8 +945,10 @@
 }
 
 //! 'Feature' alignments
-.post-template-single-feature {
-	.entry .entry-content > * {
+.post-template-single-feature,
+.page-template-single-feature {
+	.entry .entry-content > *,
+	.entry .entry-summary > * {
 		&.alignwide {
 			@include media( tablet ) {
 				margin-left: calc(25% - 25vw);
@@ -1080,7 +1082,8 @@
 	}
 }
 
-.post-template-default.singular.no-sidebar {
+.post-template-default.singular.no-sidebar,
+.page-template-default.singular.no-sidebar {
 	.entry .entry-content > * {
 		&.alignright,
 		&.wp-block-image .alignright,
