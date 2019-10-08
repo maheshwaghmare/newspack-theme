@@ -111,8 +111,8 @@ function newspack_custom_typography_css() {
 		if ( newspack_is_active_style_pack( 'style-1' ) ) {
 			$css_blocks .= "
 			.entry .entry-content .has-drop-cap:not(:focus)::first-letter,
-			.entry .entry-content .wp-block-pullquote,
-			.entry .entry-content .wp-block-pullquote cite {
+			.wp-block-pullquote,
+			.wp-block-pullquote cite {
 				font-family: $font_header;
 			}";
 		}
@@ -138,7 +138,7 @@ function newspack_custom_typography_css() {
 			$css_blocks .= "
 			.entry .entry-content .has-drop-cap:not(:focus)::first-letter,
 			.taxonomy-description,
-			.entry .entry-content blockquote, .entry .entry-content blockquote cite, .entry .entry-content .wp-block-pullquote cite {
+			.entry .entry-content blockquote, .entry .entry-content blockquote cite, .wp-block-pullquote cite {
 				font-family: $font_header;
 			}
 			";
@@ -364,7 +364,7 @@ function newspack_custom_typography_css() {
 				.page-title,
 				#secondary .widget-title,
 				.author-bio .accent-header span,
-				.entry .entry-content .wp-block-pullquote cite,
+				.wp-block-pullquote cite,
 				#colophon .widget-title {
 					text-transform: uppercase;
 				}
@@ -389,7 +389,7 @@ function newspack_custom_typography_css() {
 				.entry-meta .byline a,
 				.tags-links a,
 				.post-edit-link,
-				.entry .entry-content .wp-block-pullquote cite,
+				.wp-block-pullquote cite,
 				.author-bio h2 span,
 				.site-footer .widget-title {
 					letter-spacing: 0.05em;
@@ -416,7 +416,7 @@ function newspack_custom_typography_css() {
 				.author-bio h2 span,
 				.entry-meta .byline a,
 				.entry-meta .entry-date,
-				.entry .entry-content .wp-block-pullquote cite,
+				.wp-block-pullquote cite,
 				.site-footer .widget-title,
 				.site-info {
 					text-transform: uppercase;
